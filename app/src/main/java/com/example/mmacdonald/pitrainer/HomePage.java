@@ -9,12 +9,31 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomePage extends AppCompatActivity {
 
-    FirebaseAuth mAuth;
+    public void changeToPiPage(View view){
+
+        Intent switchToPiPage;
+
+        switch (view.getId()){
+            case R.id.testButton:
+                Toast.makeText(this, "Test Pi", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.practiceButton:
+                Toast.makeText(this, "Practice Pi", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.learnButton:
+                Toast.makeText(this, "Learn Pi", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

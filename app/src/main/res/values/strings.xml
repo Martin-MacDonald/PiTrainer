@@ -8,4 +8,9 @@
     <string name="log_in_button">Login</string>
     <string name="form_type_login">or Login</string>
     <string name="form_type_sign_up">or Sign Up</string>
+    <string name="world_best">World Best:</string>
+    <string name="user_best">Your Record:</string>
+    <string name="test_button">Test your skills!</string>
+    <string name="practice_button">Practice Pi</string>
+    <string name="learn_button">Learn Pi</string>
 </resources>
