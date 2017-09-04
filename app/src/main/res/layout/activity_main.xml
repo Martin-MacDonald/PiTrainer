@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mmacdonald.pitrainer.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout">
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:hint="@string/username_sign_up"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/emailEditText"
+            android:layout_alignTop="@+id/emailEditText"
+            android:ems="10"
+            android:hint="@string/password_sign_up"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/userActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/passwordEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:onClick="submitForm"
+            android:text="@string/sign_up_button" />
+
+        <TextView
+            android:id="@+id/formActionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:onClick="changeFormType"
+            android:text="@string/form_type_login"
+            android:textColor="@color/blue" />
+    </LinearLayout>
+
+</RelativeLayout>

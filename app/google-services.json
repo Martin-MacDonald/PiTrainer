@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "119702399266",
+    "firebase_url": "https://pi-trainer-ac45b.firebaseio.com",
+    "project_id": "pi-trainer-ac45b",
+    "storage_bucket": "pi-trainer-ac45b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119702399266:android:3c1265bad586b5ae",
+        "android_client_info": {
+          "package_name": "com.example.mmacdonald.pitrainer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119702399266-ug5l7gjjo6ifkkmv9b5a6qq6oljt947o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFBaA1cL0TvGJY2-rIhmq2cpohiEOyKt8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

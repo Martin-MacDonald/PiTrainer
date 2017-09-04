@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pi Trainer</string>
+    <string name="username">Email</string>
+    <string name="username_sign_up">Enter your Email</string>
+    <string name="password">Password</string>
+    <string name="password_sign_up">Pick a Password</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="log_in_button">Login</string>
+    <string name="form_type_login">or Login</string>
+    <string name="form_type_sign_up">or Sign Up</string>
+</resources>
