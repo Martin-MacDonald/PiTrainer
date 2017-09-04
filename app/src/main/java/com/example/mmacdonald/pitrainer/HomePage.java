@@ -48,7 +48,6 @@ public class HomePage extends AppCompatActivity {
         Toolbar homePageToolbar = (Toolbar) findViewById(R.id.homePageToolbar);
         setSupportActionBar(homePageToolbar);
 
-        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, android.R.color.transparent));
 
     }
 }
