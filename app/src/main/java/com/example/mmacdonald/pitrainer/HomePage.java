@@ -2,6 +2,7 @@ package com.example.mmacdonald.pitrainer;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,12 +22,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import static com.example.mmacdonald.pitrainer.R.id.worldBestTextView;
 
 public class HomePage extends AppCompatActivity {
 
     DatabaseReference mDatabaseReference;
     TextView mWorldBestTextView;
+    ArrayList<String> randomFactArrayList;
 
     public void getWorldBest(){
 
@@ -56,6 +61,32 @@ public class HomePage extends AppCompatActivity {
         TextView userBestTextView = (TextView) findViewById(R.id.userBestTextView);
         userBestTextView.setText(getString(R.string.user_best) + " " + highestScore);
 
+    }
+
+    public void getRandomFact(){
+
+        TextView randomFactTextView = (TextView) findViewById(R.id.randomfactTextView);
+        randomFactArrayList = new ArrayList<>();
+
+        Boolean factIDGetter = true;
+        int factIndex = 0;
+
+        while (factIDGetter){
+            String factName = "fact_" + Integer.toString(factIndex);
+            int factID = getResources().getIdentifier(factName, "string", this.getPackageName());
+            if (factID == 0){
+                factIDGetter = false;
+            } else {
+                randomFactArrayList.add(getResources().getString(factID));
+                Log.i("Fact", getResources().getString(factID));
+                factIndex++;
+            }
+
+        }
+
+        Random factRandomGenerator = new Random();
+        int randomFactIndex = factRandomGenerator.nextInt(randomFactArrayList.size());
+        randomFactTextView.setText(randomFactArrayList.get(randomFactIndex));
     }
 
     public void changeToPiPage(View view){
@@ -116,6 +147,7 @@ public class HomePage extends AppCompatActivity {
 
         getWorldBest();
         getUserBest();
+        getRandomFact();
 
     }
 }

@@ -27,25 +27,33 @@
         android:orientation="vertical">
 
         <Button
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:id="@+id/testButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="changeToPiPage"
-            android:text="@string/test_button" />
+            android:text="@string/test_button"
+            android:drawableLeft="@android:drawable/btn_star"
+            />
 
         <Button
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:id="@+id/practiceButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="changeToPiPage"
-            android:text="@string/practice_button" />
+            android:text="@string/practice_button"
+            android:drawableLeft="@android:drawable/ic_menu_help"/>
 
         <Button
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:id="@+id/learnButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="changeToPiPage"
-            android:text="@string/learn_button" />
+            android:text="@string/learn_button"
+            android:drawableLeft="@android:drawable/ic_menu_edit"
+            android:gravity="fill_vertical|center_horizontal"/>
 
         <TextView
             android:id="@+id/worldBestTextView"
@@ -66,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="TextView" />
+            android:text="@string/fact_5" />
     </LinearLayout>
 
 </RelativeLayout>

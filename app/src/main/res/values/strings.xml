@@ -13,4 +13,27 @@
     <string name="test_button">Test your skills!</string>
     <string name="practice_button">Practice Pi</string>
     <string name="learn_button">Learn Pi</string>
+    <string name="fact_0">In 1949 the Electronic Numeric Integrator and Computer (ENIC) took 70 hours to figure out the first 2,037 decimal places of pi.</string>
+    <string name="fact_1">The state legislature of Indiana proposed a bill in 1897 that tried to ascertain the most exact value of pi.  The bill never passed.</string>
+    <string name="fact_2">Fabrice Bellard holds the record for discovering the most number of digits of pi.  He calculated 2.7 trillion decimal places on just a desktop computer.</string>
+    <string name="fact_3">March 14 is known as Pi Day because of its date: 3/14.  It is also the birthday of Albert Einstein, who was born in 1879.</string>
+    <string name="fact_4">The Greek letter &#960; was selected to describe pi in 1706 by William Jones, an English mathematician.</string>
+    <string name="fact_5">It would take 12 billion digits of pi, typed in a normal-size font, to reach Kansas from New York City. </string>
+    <string name="fact_6">When people want to measure ripples emanating from a central point, they use pi.</string>
+    <string name="fact_7">Lu Chao holds the world record for reciting the most number of digits of pi.  He recited 67,890 digits, which took him 24 hours and 4 minutes.</string>
+    <string name="fact_8">Feynman point is the name for the six nines in a row that start at decimal point number 762.</string>
+    <string name="fact_9">The number 1 is the most commonly occurring number in the first 100,000 decimal places of pi.  It occurs 10,137 times.</string>
+    <string name="fact_10">Pi is defined as the ratio between a circle’s circumference and its diameter.</string>
+    <string name="fact_11">Pi is an irrational number, meaning it cannot be expressed as a fraction.</string>
 </resources>
+
+
+
+
+
+
+
+
+
+
+
