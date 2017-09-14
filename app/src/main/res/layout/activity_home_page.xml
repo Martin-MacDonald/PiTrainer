@@ -24,36 +24,39 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/randomfactTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="@string/fact_5" />
 
         <Button
-            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:id="@+id/testButton"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="changeToPiPage"
-            android:text="@string/test_button"
-            android:drawableLeft="@android:drawable/btn_star"
-            />
+            android:text="@string/test_button" />
 
         <Button
-            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:id="@+id/practiceButton"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="changeToPiPage"
-            android:text="@string/practice_button"
-            android:drawableLeft="@android:drawable/ic_menu_help"/>
+            android:text="@string/practice_button" />
 
         <Button
-            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:id="@+id/learnButton"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="changeToPiPage"
-            android:text="@string/learn_button"
-            android:drawableLeft="@android:drawable/ic_menu_edit"
-            android:gravity="fill_vertical|center_horizontal"/>
+            android:text="@string/learn_button" />
 
         <TextView
             android:id="@+id/worldBestTextView"
@@ -69,12 +72,6 @@
             android:gravity="center_horizontal"
             android:text="@string/user_best" />
 
-        <TextView
-            android:id="@+id/randomfactTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/fact_5" />
     </LinearLayout>
 
 </RelativeLayout>

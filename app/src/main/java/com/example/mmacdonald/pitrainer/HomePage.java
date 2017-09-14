@@ -41,6 +41,9 @@ public class HomePage extends AppCompatActivity {
                 if (dataSnapshot != null) {
                     mWorldBestTextView = (TextView) findViewById(R.id.worldBestTextView);
                     mWorldBestTextView.setText(getString(R.string.world_best) + " " + dataSnapshot.getValue().toString());
+                } else {
+
+                    mWorldBestTextView.setText(getString(R.string.world_best));
                 }
             }
             @Override

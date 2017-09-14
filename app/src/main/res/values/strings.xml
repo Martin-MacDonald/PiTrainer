@@ -25,6 +25,8 @@
     <string name="fact_9">The number 1 is the most commonly occurring number in the first 100,000 decimal places of pi.  It occurs 10,137 times.</string>
     <string name="fact_10">Pi is defined as the ratio between a circle’s circumference and its diameter.</string>
     <string name="fact_11">Pi is an irrational number, meaning it cannot be expressed as a fraction.</string>
+    <string name="test_length">How many numbers do you want to test to?</string>
+    <string name="test_start">Start</string>
 </resources>
 
 
