@@ -11,8 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,23 +22,90 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+import static com.example.mmacdonald.pitrainer.R.id.scoreTextView;
+
 public class TestSkillsActivity extends AppCompatActivity {
 
+    TextView answerTextView;
+    TextView scoreTextView;
     Spinner testLengthSpinner;
-    final int TEST_MAX = 1000;
+    String answer = "3.";
     final int TEST_SEGMENT = 10;
     LinearLayout testVariablesLinearLayout;
+    GridLayout numberGridLayout;
     int testValue;
     String testString;
     ArrayList<String> testStringArray;
+    Pi test;
+    int checkDigitIndex = 0;
+    int numberCorrectDigits = 0;
+
+    public void checkIfComplete(){
+
+        if (checkDigitIndex == testString.length()){
+
+            Toast.makeText(this, "You won", Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+
+    public void reset(){
+
+        if (testVariablesLinearLayout.getVisibility() == View.VISIBLE) {
+            testVariablesLinearLayout.setVisibility(View.GONE);
+            numberGridLayout.setVisibility(View.VISIBLE);
+            answerTextView.setVisibility(View.VISIBLE);
+            scoreTextView.setVisibility(View.VISIBLE);
+            checkDigitIndex = 0;
+            numberCorrectDigits = 0;
+            scoreTextView.setText(Integer.toString(numberCorrectDigits));
+            answer = "3.";
+            answerTextView.setText(answer);
+        } else {
+            testVariablesLinearLayout.setVisibility(View.VISIBLE);
+            numberGridLayout.setVisibility(View.GONE);
+            answerTextView.setVisibility(View.GONE);
+            scoreTextView.setVisibility(View.GONE);
+            testLengthSpinner.setSelection(0);
+        }
+
+
+    }
+
+    public void updateAnswer(String answerChar){
+
+        answer += answerChar;
+        answerTextView.setText(answer);
+
+        scoreTextView.setText(Integer.toString(numberCorrectDigits));
+
+    }
+
+    public void checkDigit(View view){
+
+        if (checkDigitIndex < testString.length()) {
+            if (view.getTag().toString().equals(testStringArray.get(checkDigitIndex))) {
+                Log.i("Answer", "Correct");
+                checkDigitIndex++;
+                numberCorrectDigits++;
+                updateAnswer(view.getTag().toString());
+            } else {
+                Log.i("Answer", "Wrong");
+            }
+        }
+
+        checkIfComplete();
+    }
 
     public void startTest(View view){
 
+        reset();
         testStringArray = new ArrayList<>();
         testStringArray.clear();
-        testVariablesLinearLayout.setVisibility(View.GONE);
+
         testValue = (int) testLengthSpinner.getSelectedItem();
-        Pi test = new Pi();
         testString = test.getPi_String(testValue);
         for (int i = 0; i < testValue; i++){
 
@@ -62,8 +131,8 @@ public class TestSkillsActivity extends AppCompatActivity {
                 Intent homePageIntent = new Intent(this, HomePage.class);
                 startActivity(homePageIntent);
             case R.id.restart:
-                testVariablesLinearLayout.setVisibility(View.VISIBLE);
-                testLengthSpinner.setSelection(0);
+                reset();
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -74,14 +143,18 @@ public class TestSkillsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_skills);
 
+        answerTextView = (TextView) findViewById(R.id.answerTextView);
+        scoreTextView = (TextView) findViewById(R.id.scoreTextView);
         Toolbar testPageToolbar = (Toolbar) findViewById(R.id.testPageToolbar);
         setSupportActionBar(testPageToolbar);
+        numberGridLayout = (GridLayout) findViewById(R.id.numberGridLayout);
+        test = new Pi();
 
         testLengthSpinner = (Spinner) findViewById(R.id.testLengthSpinner);
         testVariablesLinearLayout = (LinearLayout) findViewById(R.id.testVariablesLinearLayout);
 
         ArrayList<Integer> spinnerArray = new ArrayList<>();
-        for (int i = 1; i <= TEST_MAX/TEST_SEGMENT; i++){
+        for (int i = 1; i <= test.getPI_MASTER().length()/TEST_SEGMENT; i++){
 
             spinnerArray.add(i * 10);
 
